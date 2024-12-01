@@ -136,6 +136,5 @@ class LoginPanel extends JPanel {
         add(passwordField);
         add(new JLabel());
         add(loginButton);
-//iehdiwuafawufgiuegf
     }
 }
