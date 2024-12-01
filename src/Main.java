@@ -1,6 +1,8 @@
 import java.util.Date;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main {
     public static void main(String[] args) {
@@ -81,6 +83,59 @@ public class Main {
         professor1.logout();
         professor2.logout();
 
+        JFrame frame = new JFrame("Sistema Educacional");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 400);
+        frame.setLayout(new BorderLayout());
 
+        // Criar o menu
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("Arquivo");
+        JMenuItem exitItem = new JMenuItem("Sair");
+        exitItem.addActionListener(e -> System.exit(0));
+        fileMenu.add(exitItem);
+        menuBar.add(fileMenu);
+        frame.setJMenuBar(menuBar);
+
+        // Adicionar o painel de login
+        LoginPanel loginPanel = new LoginPanel();
+        frame.add(loginPanel, BorderLayout.CENTER);
+
+        frame.setVisible(true);
+    };
+}
+
+
+class LoginPanel extends JPanel {
+    private JTextField usernameField;
+    private JPasswordField passwordField;
+    private JButton loginButton;
+
+    public LoginPanel() {
+        setLayout(new GridLayout(3, 2));
+
+        JLabel usernameLabel = new JLabel("Usuário:");
+        usernameField = new JTextField();
+        JLabel passwordLabel = new JLabel("Senha:");
+        passwordField = new JPasswordField();
+        loginButton = new JButton("Login");
+
+        loginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String username = usernameField.getText();
+                String password = new String(passwordField.getPassword());
+                // Aqui você pode adicionar a lógica de autenticação
+                JOptionPane.showMessageDialog(null, "Login realizado com sucesso!");
+            }
+        });
+
+        add(usernameLabel);
+        add(usernameField);
+        add(passwordLabel);
+        add(passwordField);
+        add(new JLabel());
+        add(loginButton);
+//iehdiwuafawufgiuegf
     }
 }
