@@ -22,4 +22,5 @@ public abstract class Usuario {
     public String getEmail() {
         return email;
     }
+    public String toString() {return "Nome: "+ nome + ";" + "Email: "+ email + ";" + "Senha: " + senha;}
 }

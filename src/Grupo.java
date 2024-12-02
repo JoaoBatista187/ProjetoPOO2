@@ -92,4 +92,5 @@ public class Grupo {
                 "Professores: " + professores.size() + "\n" +
                 "Mensagens: " + mensagens.size();
     }
+
 }

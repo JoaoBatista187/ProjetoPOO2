@@ -28,4 +28,9 @@ public class Aluno extends Usuario {
     public void enviarProjeto() {
         System.out.println("Aluno " + getNome() + " enviou um projeto");
     }
+    @Override
+    public String toString() {
+        return super.toString() + ";" + "Turma: " + turma;
+    }
+
 }

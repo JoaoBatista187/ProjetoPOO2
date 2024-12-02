@@ -36,4 +36,8 @@ public class Professor extends Usuario {
     public void publicarFeedback() {
         System.out.println("Professor " + getNome() + " publicou feedback");
     }
+    @Override
+    public String toString() {
+        return super.toString() + ";" + "Departamento: " + departamento;
+    }
 }
